@@ -198,7 +198,7 @@ public class Test {
 		pstmt.setObject(1, args[0]);
 		pstmt.setObject(2, args[1]);
 		pstmt.setObject(3, args[2]);
-		pstmt.setObject(4, args[3]);
+		//pstmt.setObject(4, args[3]);
 		//pstmt.setObject(5, args[4]);
 		int rs = pstmt.executeUpdate();
 		if (rs > 0) {

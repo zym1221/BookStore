@@ -49,16 +49,10 @@
 <body>
 
 <%
-        /* Test t1 = new Test();
-        String sql = "select * from bookstore.books_table where bookId=2";
-        List<Book> lst = t1.getBook(sql); */
+
         Connectdb dobooks = new Connectdb();
         Test t1 = new Test();
         request.setCharacterEncoding("utf-8");
-        //Book bk1=new Book();
-		//String name=request.getParameter("bookName");
-		//String sql5 = "select * from bookstore.books_table";
-		//List<Book> bookslist = t1.getBook(sql5);
 		String sql = "select bookstore.books_table.bookId,bookstore.books_table.bookName,bookstore.type_table.typeName,bookstore.books_table.bookAuthor,bookstore.books_table.bookPublish,bookstore.books_table.bookPrice,bookstore.books_table.bookCount,bookstore.books_table.bookImg from bookstore.books_table,bookstore.type_table where bookstore.books_table.bookType=bookstore.type_table.bookType";
         List<Book> bookslist = t1.getBook2(sql);
 		int myid = MyTools.strToint(request.getParameter("id"));
@@ -70,9 +64,6 @@
 		List<Book> lst = t1.getBook(sql1);
         for (Book bk : lst) {
         	%>
-            <!--  out.println("</td></tr>"+"</td><td>" + bk.getBookId()+"</td><td>" + bk.getBookType() + "</td><td>" + bk.getBookName() + "</td><td>" + bk.getBookAuthor() + "</td><td>" + bk.getBookPublish() + "</td><td>" + "<img src=/booksImg/"+bk.getBookImg()+"class='bookImg'></img></td>" + "<td>" + bk.getBookPrice() + "</td><td>" + bk.getBookCount() + "</td><td>" +  "</td></tr>"); 
-            //out.println("</td></tr>"+"</td><td>" + bk.getBookId()+"</td><td>" + bk.getBookType() + "</td><td>" + bk.getBookName() + "</td><td>" + bk.getBookAuthor() + "</td><td>" + bk.getBookPublish() + "</td><td>" +bk.getBookImg()+"</td>" + "<td>" + bk.getBookPrice() + "</td><td>" + bk.getBookCount() + "</td><td>" +  "</td></tr>");	
-        } -->
         <div class="header">
 		<h2 class="title">ª∂”≠π∫¬ÚÕº È</h2>
 		<a class="getback" href="vip.jsp">∑µªÿ</a>
@@ -96,14 +87,10 @@
 			<h2>œÍœ∏ΩÈ…‹</h2>
 			<div class="mainbody">
 			<%
-			/* Book book1 = (Book) bookslist.get(myid);
-			int bookId1 = book1.getBookId(); */
 			String sql2 = "select bookInformation from bookstore.books_table,bookstore.book_info where bookstore.books_table.bookId='" + bookId + "' and bookstore.books_table.bookId=bookstore.book_info.id";
 			ResultSet rs=dobooks.executeQuery(sql2);
 			while (rs.next()) {
 				rs.getString(1);
-			/* List<Book> lst1 = t1.getBook(sql2);
-	        for (Book bk1 : lst) { */
 			%>
 				<p><%=rs.getString(1)%>
 				</p>

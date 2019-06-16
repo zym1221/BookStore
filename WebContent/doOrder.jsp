@@ -39,11 +39,7 @@ Connectdb order = new Connectdb();
 		String express = new String(request.getParameter("express").getBytes("UTF-8"),"UTF-8");
 		String telephone = new String(request.getParameter("telephone"));
 		String status = new String(request.getParameter("status").getBytes("UTF-8"),"UTF-8");
-		
-		/* String sql2 = "update order_table set bookId='" + bookId + "',name='" + name 
-				+ "',address='" + address + "',salesDate='" + salesDate 
-				+ "',express='" + express +"',total=" + total + ",status=" + status
-				+ " where orderId='" + orderId + "'"; */
+
 		String sql2 = "update order_table set bookId='" + bookId + "',name='" + name 
 				+ "',address='" + address + "',salesDate='" + salesDate 
 				+ "',express='" + express +"',telephone=" + telephone + ",status='"+ status+"' where orderId='" + orderId + "'" ;

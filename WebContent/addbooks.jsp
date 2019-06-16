@@ -76,6 +76,7 @@
 </head>
 <body>
 	<div class="nav">
+	<center><h1>图书销售管理系统</h1></center>
 		<h2 class="title">新增图书</h2>
 		<form method="post" action="dobooks.jsp?action=add" enctype="multipart/form-data" class="myForm">
 			<table>

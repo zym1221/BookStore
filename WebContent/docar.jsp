@@ -25,11 +25,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	String action = request.getParameter("action");
 	int num = MyTools.strToint(request.getParameter("num"));
 	String bookid=request.getParameter("bookId");
-	//String name=new String((request.getParameter("name")).getBytes("UTF-8"),"UTF-8"); 
-	//String address=new String((request.getParameter("address")).getBytes("UTF-8"),"UTF-8"); 
-	//String name=(request.getParameter("name").getBytes("UTF-8"),"UTF-8");
-	//String address=request.getParameter("address");
-	//double total=Double.parseDouble(request.getParameter("total"));
 	Test t1 = new Test();
     request.setCharacterEncoding("utf-8");
     String sql = "select * from bookstore.books_table where bookId='"+bookid+"' ";
@@ -41,8 +36,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	if (action.equals("buy")) { 
         
         //购买商品
-		/* int id = MyTools.strToint(request.getParameter("id"));
-		 List<Book> bookslist = t1.getBook(sql); */
 		 for (Book book : bookslist) {
 		if(book.getBookCount()>num){
 			book.setBookNum(num);
@@ -91,9 +84,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		String express=new String("暂无快递");
 		String status=new String("待发货");
 		
-		//double total=Double.parseDouble(request.getParameter("total"));
-		//String name=new String((request.getParameter("name")).getBytes("UTF-8"),"UTF-8"); 
-		//String address=new String((request.getParameter("address")).getBytes("UTF-8"),"UTF-8"); 
 		for(int i=0;i<buylist.size();i++){
 			Book buytemp = (Book) buylist.get(i);
 					SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

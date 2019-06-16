@@ -24,25 +24,58 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	<style type="text/css">
+		*{margin: 0;padding: 0}
+        html,body{height: 100%} 
 		#loginbox{
 			background:aliceblue;
-			width: 300px;
-			height: 300px;
+			width: 100%;
+			height: 100%;
 			border:1px solid lightgreen;
 		}
+		 .outer-wrap{
+            /*只有同时为html和body设置height: 100%时，这里的height才生效，
+            并且随浏览器窗口变化始终保持和浏览器视窗等高*/
+            height: 100%;    
+            position: relative;
+            /* background-color: aliceblue; */
+            background:url(img/bg6.jpg);
+        }
+        .login-panel{
+            width: 400px;
+            height: 300px;
+            /* background-color: pink; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -200px;
+        }
+        .btn{width: 60px;
+        height: 30px;
+        
+        }
+        input{height:30px;}
 	</style>
  
   </head>
   
   <body>
-  <div id="loginbox">
-    <p>登录</p> <br>
+  
+		<div class="outer-wrap">
+		<center><h1>图书销售管理系统</h1></center>
+        <div class="login-panel">
+        <center>
+        <h2>管理员登录</h2> <br>
+    
     <form action="admincheck.jsp" method="post">
-    	管理员id：<input type="text" placeholder="请输入管理员id" name="adminid"><br>
-    	管理员密码：<input type="password" placeholder="请输入密码" name="adminpsd"><br>
-    	<input type="submit" value="登录">
+    	&nbsp;&nbsp;管理员id：&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="请输入管理员id" name="adminid"><br><br>
+    	管理员密码：<input type="password" placeholder="请输入密码" name="adminpsd"><br><br>
+    	<input type="submit" value="登录" class="btn">
     </form><br>
     <h3>${name}</h3>
+    </center>
     </div>
+    </div>
+ 
   </body>
 </html>

@@ -155,9 +155,7 @@ position:relative;
 				</div>
 	<div class="footer">
 		<p class="footer-1">
-			<%-- <span class="money">应付金额：￥<%=total %></span><br> --%>
-			<%-- <a class="pay" href="docar.jsp?action=pay&total=<%=total%>">下单</a> --%> 
-			<!-- <a class="pay" href="order.jsp">下单</a> -->
+			
 		请检查收货信息然后下单
 		<input type="submit" value="确定">
 				&nbsp;&nbsp; <input

@@ -13,6 +13,7 @@
 		font-family:"Microsoft Yahei";
 		font-size:16px;
 	}
+	html{background:url(img/bg6.jpg);}
 	a{
 		text-decoration:none;
 	}
@@ -36,9 +37,9 @@
 </head>
 <body>
 <%
-		//String sql = "select * from sales_table where bookId='00010001'";
+
 		String sql = "select sales_table.bookId,type_table.typeName,sales_table.bookName,sales_table.sales "+
-					"from sales_table,type_table where sales_table.bookType=type_table.bookType";
+							"from sales_table,type_table where sales_table.bookType=type_table.bookType order by sales_table.sales desc";
 		Connectdb connection = new Connectdb();
 		ResultSet rs = connection.executeQuery(sql);//执行SQL语句并取得结果集
 %>

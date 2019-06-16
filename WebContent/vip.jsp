@@ -78,7 +78,7 @@ a {
 </head>
 <body>
 <div id="box1">
-	<center>欢迎来到zym图书商城</center>
+	<center><h1>图书销售管理系统</h1></center>
 	<p>欢迎选购图书，您可以根据图书名搜索图书.</p>
 	
 </div>
@@ -111,12 +111,8 @@ a {
         List<Book> lst = t1.getBook2(sql);
         for(int i=0;i<lst.size();i++){
             Book bk = lst.get(i);
-
-        //for (Book bk : lst) {
         	%>
-            <!--  out.println("</td></tr>"+"</td><td>" + bk.getBookId()+"</td><td>" + bk.getBookType() + "</td><td>" + bk.getBookName() + "</td><td>" + bk.getBookAuthor() + "</td><td>" + bk.getBookPublish() + "</td><td>" + "<img src=/booksImg/"+bk.getBookImg()+"class='bookImg'></img></td>" + "<td>" + bk.getBookPrice() + "</td><td>" + bk.getBookCount() + "</td><td>" +  "</td></tr>"); 
-            //out.println("</td></tr>"+"</td><td>" + bk.getBookId()+"</td><td>" + bk.getBookType() + "</td><td>" + bk.getBookName() + "</td><td>" + bk.getBookAuthor() + "</td><td>" + bk.getBookPublish() + "</td><td>" +bk.getBookImg()+"</td>" + "<td>" + bk.getBookPrice() + "</td><td>" + bk.getBookCount() + "</td><td>" +  "</td></tr>");	
-        } -->
+
 	<tr height="60" align="center">
 		<td><%=bk.getBookId()%></td>
 		<td><%=bk.getBookName()%></td>
@@ -136,8 +132,6 @@ a {
 
 	<tr height="50">
 		<td align="center" colspan="9">
-			
-			<!-- <a class="salesinfo" href="salesinfo.jsp">销售信息</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 			<a class="salesinfo" href="shopcar.jsp">查看购物车</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

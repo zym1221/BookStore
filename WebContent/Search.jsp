@@ -87,7 +87,7 @@ a {
 	text-decoration:none;
 	position:fixed;
 	right:20px;
-	top:250px;
+	top:270px;
 	}
         td {
             width: 350px;
@@ -102,8 +102,8 @@ a {
 
 <body>
 <div id="box1">
-	<center>欢迎来到zym图书商城</center>
-	<p>欢迎选购图书，您可以根据图书名搜索图书.</p>
+	<center><h1>图书销售管理系统</h1></center>
+	<p>欢迎选购图书，您查找的书籍信息如下：</p>
 	
 </div>
 
@@ -121,12 +121,7 @@ a {
 		<td>库存</td>
 		<td>详细信息</td>
 	</tr>
-		<!-- <div class="search-container">
-           <form id="searchForm">
-              <input type="text" placeholder="请输入书名搜索..." name="search">
-              <button type="submit" name="chaxun">查询</button>
-           </form>
-        </div>   -->
+
 
 <%
         Test t1 = new Test();
@@ -134,27 +129,17 @@ a {
       String info = new String(request.getParameter("search").getBytes("UTF-8"),"UTF-8");
          info=java.net.URLDecoder.decode(info,"UTF-8");
 	     out.println(info); 
-        //request.setCharacterEncoding("utf-8");
-        //String name=request.getParameter("search");
+        
         String name = new String(request.getParameter("search").getBytes("UTF-8"),"UTF-8");
         name=java.net.URLDecoder.decode(name,"UTF-8");
        // String sql = "select * from bookstore.books_table where bookName='"+name+"' ";//在sql语句中使用变量 
        String sql="select bookstore.books_table.bookId,bookstore.books_table.bookName,bookstore.type_table.typeName,bookstore.books_table.bookAuthor,bookstore.books_table.bookPublish,bookstore.books_table.bookPrice,bookstore.books_table.bookCount,bookstore.books_table.bookImg from bookstore.books_table,bookstore.type_table where bookstore.books_table.bookType=bookstore.type_table.bookType and bookstore.books_table.bookName='"+name+"' ";
-        /*  if(name!=null){
-        	sql += "where bookName='" + request.getParameter("search") + "'";
-        } */
+       
         List<Book> lst = t1.getBook2(sql);
         for(int i=0;i<lst.size();i++){
             Book bk = lst.get(i);
-        /* if(lst==null||lst.size()==0){out.println("查询书籍不存在！请重新搜索");} */
-        //for (Book bk : lst) { 
+       
 %> 
-
-<%--  <%
-	request.setCharacterEncoding("utf-8");
-	String info = request.getParameter("search");
-  	out.println(info);
-%> --%>
 
 <div id="info">
  <tr height="60" align="center">

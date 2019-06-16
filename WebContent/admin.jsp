@@ -10,6 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>zym图书商城</title>
 <style type="text/css">
+/* html{background:url(img/bg6.jpg);} */
 a {
 	text-decoration: none;
 }
@@ -56,7 +57,7 @@ a {
 </head>
 <body>
 <div id="box1">
-	<center>欢迎来到zym图书商城</center>
+	<center><h1>图书销售管理系统</h1></center>
 	
 </div>
 
@@ -84,9 +85,6 @@ a {
         	Book bk = lst.get(i);
         /* for (Book bk : lst) { */
         	%>
-            <!--  out.println("</td></tr>"+"</td><td>" + bk.getBookId()+"</td><td>" + bk.getBookType() + "</td><td>" + bk.getBookName() + "</td><td>" + bk.getBookAuthor() + "</td><td>" + bk.getBookPublish() + "</td><td>" + "<img src=/booksImg/"+bk.getBookImg()+"class='bookImg'></img></td>" + "<td>" + bk.getBookPrice() + "</td><td>" + bk.getBookCount() + "</td><td>" +  "</td></tr>"); 
-            //out.println("</td></tr>"+"</td><td>" + bk.getBookId()+"</td><td>" + bk.getBookType() + "</td><td>" + bk.getBookName() + "</td><td>" + bk.getBookAuthor() + "</td><td>" + bk.getBookPublish() + "</td><td>" +bk.getBookImg()+"</td>" + "<td>" + bk.getBookPrice() + "</td><td>" + bk.getBookCount() + "</td><td>" +  "</td></tr>");	
-        } -->
 
 	<tr height="60" align="center">
 		<td><%=bk.getBookId()%></td>
@@ -106,16 +104,14 @@ a {
 		}
 	%>
 <tr height="50">
-		<td align="center" colspan="9">
+		<td align="center" colspan="10">
 			<a class="login" href="addbooks.jsp">添加书籍</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;
 			<a class="login" href="updateOrder.jsp">查看订单</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;
 			<a class="login" href="index.html">返回主页</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;
-			<!-- <a class="salesinfo" href="updatebooks.jsp">更新书籍</a>
-			<!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
-			<!-- <a class="salesinfo" href="salesinfo.jsp">销售信息</a> -->
+
 		</td>
 
 </body>

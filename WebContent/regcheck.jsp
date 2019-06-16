@@ -26,17 +26,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<%
     	request.setCharacterEncoding("utf-8");
      	response.setCharacterEncoding("utf-8");
-     	String id=new String((request.getParameter("id")).getBytes("UTF-8"),"UTF-8"); 
+     	
      	String username=new String((request.getParameter("username")).getBytes("UTF-8"),"UTF-8"); 
      	String userpsd=new String((request.getParameter("userpsd")).getBytes("UTF-8"),"UTF-8");
      	String telephone=new String((request.getParameter("telephone")).getBytes("UTF-8"),"UTF-8"); 
-     	//String email=new String((request.getParameter("email")).getBytes("UTF-8"),"UTF-8"); 
-     	String sql="insert into bookstore.user(id,username,userpsd,telephone) values(?,?,?,?)";
+     	
+     	String sql="insert into bookstore.user(username,userpsd,telephone) values(?,?,?)";
      	String sql1="select from bookstore.user where id=id";
      	String sql2="select from bookstore.user where username=username";
      	String sql3="select from bookstore.user where iuserpsd=userpsd";
      	String sql4="select from bookstore.user where telephone=telephone";
-     	Object[] myarg={id,username,userpsd,telephone};
+     	Object[] myarg={username,userpsd,telephone};
      	String arg1=request.getParameter("id");
      	Object[] myargs1={request.getParameter("id"),request.getParameter("username"),request.getParameter("userpsd"),request.getParameter("telephone")};
      	Test T1=new Test();

@@ -18,6 +18,7 @@
 <head>
     <title>zym图书商城</title>
 <style type="text/css">
+/* html{background:url(img/bg6.jpg);} */
 input{
 			    width: 87.5%;
 			    border: 1px solid #e2e2e2;
@@ -90,7 +91,7 @@ a {
 </script> -->
 </head>
 <body>
-
+<center><h1>图书销售管理系统</h1></center>
 <table border="1" cellspacing="0">
 		<td colspan="9" align="center" class="title">订单信息如下</td>
 	</tr>
@@ -108,7 +109,6 @@ a {
 
     <%
     Test t1 = new Test();
-    //String sql = "select * from bookstore.books_table";
     String sql = "select * from bookstore.order_table";
     List<Order> lst = t1.getOrder(sql);
     for(int i=0;i<lst.size();i++){

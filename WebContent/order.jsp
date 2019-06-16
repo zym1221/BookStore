@@ -117,25 +117,9 @@ a {
 			rs.getString(7);
 			rs.getString(8);
 			//list.add(rs);}
-		/* List<Book> lst1 = t1.getBook(sql2);
-        for (Book bk1 : lst) { */
-        	/* for(int i=0;i<list.size();i++){
-        		ResultSet rs = list.get(i);  */
+
 		%>
-		<%-- <%
-		for(int i=0;i<list.size();i++){
-    		Object rs1 = list.get(i); 
-		%>  --%>
-		<%-- <tr height="60" align="center">
-		<td><%=rs.getString(1)%></td>
-		<td><%=rs.getString(2)%></td>
-		<td><%=rs.getString(3)%></td>
-		<td><%=rs.getString(4)%></td>
-		<td><%=rs.getString(5)%></td>
-		<td><%=rs.getString(6)%></td>
-		<td><%=rs.getString(7)%></td>
-		<td><%=rs.getString(8)%></td>
-		</tr> --%>
+
 		<tr height="60" align="center">
 		<td><%=rs.getString(1)%></td>
 		<td><%=rs.getString(2)%></td>
@@ -148,15 +132,6 @@ a {
 		</tr>
 		
 		
-			<%-- <p><%=rs.getString(1)%>
-			<%=rs.getString(2)%>
-			<%=rs.getString(3)%>
-			<%=rs.getString(2)%>
-			<%=rs.getString(5)%>
-			<%=rs.getString(6)%>
-			<%=rs.getString(7)%>
-			<%=rs.getString(8)%>
-			</p> --%>
 		 	<%
 		}
 	%> 

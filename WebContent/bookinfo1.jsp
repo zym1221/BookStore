@@ -40,7 +40,6 @@
 		var bookId=document.getElementsByName("bkId")[0].innerText;
 		//alert(bookName);
 		//alert(bookId)
-		//window.location.href="docar.jsp?action=buy&id="+myId+"&num="+num;
 		window.location.href="docar.jsp?action=buy&num="+num+"&bookId="+bookId;
 		return false;
 	}
@@ -49,9 +48,6 @@
 <body>
 
 <%
-        /* Test t1 = new Test();
-        String sql = "select * from bookstore.books_table where bookId=2";
-        List<Book> lst = t1.getBook(sql); */
         Connectdb dobooks = new Connectdb();
         Test t1 = new Test();
         request.setCharacterEncoding("utf-8");
@@ -61,11 +57,9 @@
         List<Book> lst = t1.getBook(sql);
         for (Book bk : lst) {
         	%>
-            <!--  out.println("</td></tr>"+"</td><td>" + bk.getBookId()+"</td><td>" + bk.getBookType() + "</td><td>" + bk.getBookName() + "</td><td>" + bk.getBookAuthor() + "</td><td>" + bk.getBookPublish() + "</td><td>" + "<img src=/booksImg/"+bk.getBookImg()+"class='bookImg'></img></td>" + "<td>" + bk.getBookPrice() + "</td><td>" + bk.getBookCount() + "</td><td>" +  "</td></tr>"); 
-            //out.println("</td></tr>"+"</td><td>" + bk.getBookId()+"</td><td>" + bk.getBookType() + "</td><td>" + bk.getBookName() + "</td><td>" + bk.getBookAuthor() + "</td><td>" + bk.getBookPublish() + "</td><td>" +bk.getBookImg()+"</td>" + "<td>" + bk.getBookPrice() + "</td><td>" + bk.getBookCount() + "</td><td>" +  "</td></tr>");	
-        } -->
         <div class="header">
 		<h2 class="title">欢迎购买图书</h2>
+		
 		<a class="getback" href="vip.jsp">返回</a>
 		<input type="text" id="count" value="<%=bk.getBookCount() %>" />
 	</div>
@@ -81,20 +75,15 @@
 			<span>数量：<b onclick="countdown()">-</b><input type="text" name="num" id="num" value="1" /><b onclick="countup()">+</b></span>
 			<!--<span>数量：<input type="text" name="num" id="num" value="1" readonly/></span>-->
 		     <a href="javascript:doSubmit()" class="dogood">加入购物车</a>
-			<!-- <a href="" class="dogood">购买</a> -->
 		</div>
 		<div class="main-2">
 			<h2>详细介绍</h2>
 			<div class="mainbody">
 			<%
-			/* Book book1 = (Book) bookslist.get(myid);
-			int bookId1 = book1.getBookId(); */
 			String sql2 = "select bookInformation from bookstore.books_table,bookstore.book_info where bookstore.books_table.bookId='" + Id + "' and bookstore.books_table.bookId=bookstore.book_info.id";
 			ResultSet rs=dobooks.executeQuery(sql2);
 			while (rs.next()) {
 				rs.getString(1);
-			/* List<Book> lst1 = t1.getBook(sql2);
-	        for (Book bk1 : lst) { */
 			%>
 				<p><%=rs.getString(1)%>
 				</p>

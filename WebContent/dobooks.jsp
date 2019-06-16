@@ -30,16 +30,10 @@ response.setCharacterEncoding("utf-8");
     Test t1 = new Test();
     request.setCharacterEncoding("utf-8");
 	String action = request.getParameter("action");
-	/* String name=request.getParameter("bookName");
-	String sql = "select * from bookstore.books_table where bookName='"+name+"' ";
-	List<Book> bookslist = t1.getBook(sql); */
 	if (action == null)
 		action = "";
 	if (action.equals("delete")) { //删除商品
-		/* ArrayList bookslist = (ArrayList) session
-				.getAttribute("bookslist"); */
 				Book bk=new Book();
-		//String name=request.getParameter("bookName");
 		String sql5 = "select * from bookstore.books_table";
 		List<Book> bookslist = t1.getBook(sql5);
 		int myid = MyTools.strToint(request.getParameter("id"));
@@ -51,21 +45,7 @@ response.setCharacterEncoding("utf-8");
 		dobooks.executeUpdate(sql);
 		response.sendRedirect("getbooks.jsp");
 		
-	} /* else if (action.equals("update")) { //更新商品信息
-		String bookId = request.getParameter("bookId");
-		String bookType = request.getParameter("bookType");
-		String bookName = MyTools.toChinese(request.getParameter("bookName"));
-		String bookAuthor = MyTools.toChinese(request.getParameter("bookAuthor"));
-		String bookPublish = MyTools.toChinese(request.getParameter("bookPublish"));
-		double bookPrice = Double.parseDouble(request.getParameter("bookPrice"));
-		int bookCount = Integer.parseInt(request.getParameter("bookCount"));
-		String sql2 = "update books_table set bookId='" + bookId + "',bookType='" + bookType 
-				+ "',bookName='" + bookName + "',bookAuthor='" + bookAuthor 
-				+ "',bookPublish='" + bookPublish +"',bookPrice=" + bookPrice + ",bookCount=" + bookCount
-				+ " where bookId='" + bookId + "'";
-		dobooks.executeUpdate(sql2);
-		response.sendRedirect("getbooks.jsp");
-	} */
+	} 
 	else if (action.equals("update")) { //更新商品信息
 		String bookId = request.getParameter("bookId");
 		String bookType = request.getParameter("bookType");

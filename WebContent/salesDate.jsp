@@ -8,12 +8,14 @@
 <head>
 <title>图书销售表</title>
 <style type="text/css">
+html{background:url(img/bg6.jpg);}
 	*{
 		margin:0;
 		padding:0;
 		font-family:"Microsoft Yahei";
 		font-size:16px;
 	}
+	
 	a{
 		text-decoration:none;
 	}

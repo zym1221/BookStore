@@ -69,13 +69,13 @@
 	<h3 class="title">销售统计结果显示</h3>
 	<hr/>
     <ul>
-        <li class="on">表格</li>
-        <li>柱形图</li>
-        <li>饼图</li>
+        <li class="on">销售统计</li>
+        <!-- <li>柱形图</li>
+        <li>饼图</li> -->
     </ul>
     <div>
     	<table width="400">
-    		<tr height="40" style="color:#fff;">
+    		<tr height="40" style="color:black;">
     			<td>类别</td><td width="30%" align="right">销量&nbsp;&nbsp;</td><td colspan="2">&nbsp;</td>
     		</tr>
          	<% if(saleslist==null||saleslist.size()==0){ %>
